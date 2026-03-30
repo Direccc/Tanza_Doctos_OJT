@@ -37,10 +37,6 @@
 			.insurance-grid-item img:hover {
 				transform: scale(1.05);
 			}
-			.pagination .page-item.active .page-link {
-				background-color: #0088cc;
-				border-color: #0088cc;
-			}
 		</style>
 	</head>
 	<body>
@@ -89,7 +85,7 @@
 											<nav class="collapse">
 												<ul class="nav nav-pills" id="mainNav">
 													<li class="dropdown-full-color dropdown-secondary">
-														<a class="nav-link active" href="demo-medical.html">
+														<a class="nav-link" href="demo-medical.html">
 															Home
 														</a>
 													</li>
@@ -122,7 +118,7 @@
 														</a>
 													</li>
 													<li class="dropdown-full-color dropdown-secondary">
-														<a class="nav-link" href="demo-medical-insurance.html">
+														<a class="nav-link active" href="demo-medical-insurance.html">
 															Insurance
 														</a>
 													</li>
@@ -161,28 +157,32 @@
 					<div class="row mt-5 mb-4 text-center">
 						<div class="col">
 							<h2 class="font-weight-semibold mb-3">Our Accredited Health Partners</h2>
-							<p class="lead font-weight-normal mb-5">We are proud to partner with these providers to ensure accessible healthcare for the Tanza community.</p>
+							<p class="lead font-weight-normal mb-5">We are proud to partner with these providers to make quality healthcare accessible to the wider community we serve.</p>
+						</div>
 
-							
-							</div>
-								<div class="row justify-content-center mb-5">
-									<div class="col-md-6" style="position: relative;">
-        							<div class="input-group shadow-sm">
-            							<span class="input-group-text bg-color-primary text-white border-0">
-               						 <i class="fas fa-search"></i>
-            						</span>
-									<input type="text" id="pageSearch" class="form-control" placeholder="Search all 23 providers..." autocomplete="off">
-								</div>
-								<div id="searchResults" class="list-group shadow-lg" style="position: absolute; width: 93%; z-index: 1000; display: none; max-height: 250px; overflow-y: auto; text-align: left;"></div>
-							</div>	
+				<div class="row justify-content-center mb-5">
+					<div class="col-md-6 position-relative">
+						<div class="input-group shadow-sm rounded-pill overflow-hidden">
+						<span class="input-group-text bg-primary text-white border-0">
+							<i class="fas fa-search"></i>
+						</span>
+						<input type="text" id="pageSearch" 
+								class="form-control border-0 py-2 px-3" 
+								placeholder="Search all 23 providers..." 
+								autocomplete="off" aria-label="Search providers">
+						</div>
+						<div id="searchResults" 
+							class="list-group shadow-lg mt-2 rounded" 
+							style="position: absolute; width: 100%; z-index: 1000; display: none; max-height: 250px; overflow-y: auto; text-align: left;" 
+							role="listbox">
+						</div>
+					</div>
+				</div>
 
-								</div>
+
 							<div class="content-grid mt-5 pb-5">
 								<div class="row content-grid-row ps-3 pe-3">
 									<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="1Coop Health">
-
-
-										
 										<img src="img/demos/medical/logos/1coop.png" alt="1Coop Health" class="img-fluid" />
 										
 									</div>
@@ -216,25 +216,90 @@
 								</div>
 							</div>
 
-							<nav aria-label="Page navigation" class="mt-4">
+							<nav aria-label="Page navigation" class="mt-4 mb-4">
 								<ul class="pagination justify-content-center">
-									<li class="page-item disabled"><span class="page-link">Previous</span></li>
-									<li class="page-item active"><a class="page-link" href="demo-medical-insurance.html">1</a></li>
-									<li class="page-item"><a class="page-link" href="demo-medical-insurance2.html">2</a></li>
-									<li class="page-item"><a class="page-link" href="demo-medical-insurance3.html">3</a></li>
-									<li class="page-item"><a class="page-link" href="demo-medical-insurance4.html">4</a></li>
-									<li class="page-item"><a class="page-link" href="demo-medical-insurance2.html">Next</a></li>
+									<li class="page-item disabled mx-1">
+										<a class="page-link py-2 px-3 rounded-pill" href="#" tabindex="-1" aria-disabled="true">&laquo;</a>
+									</li>
+									<li class="page-item active mx-1"><a class="page-link py-2 px-3 rounded-pill" href="demo-medical-insurance.html">1</a></li>
+									<li class="page-item mx-1"><a class="page-link py-2 px-3 rounded-pill" href="demo-medical-insurance2.html">2</a></li>
+									<li class="page-item mx-1"><a class="page-link py-2 px-3 rounded-pill" href="demo-medical-insurance3.html">3</a></li>
+									<li class="page-item mx-1"><a class="page-link py-2 px-3 rounded-pill" href="demo-medical-insurance4.html">4</a></li>
+									<li class="page-item mx-1">
+									<a class="page-link py-2 px-3 rounded-pill" href="demo-medical-insurance2.html">&raquo;</a>
+									</li>
 								</ul>
 							</nav>
-
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<footer id="footer" class="m-0">
-				<div class="container text-center pt-5 pb-5">
-					<p>© Copyright 2026. All Rights Reserved.</p>
+				<div class="container">
+					<div class="row pt-5 pb-4">
+						<div class="col-md-4 col-lg-3 mb-2">
+							<h4 class="mb-4">Location</h4>
+							<p>
+								Tanza Doctors Hospital Inc.<br>
+								123 Sahud Ulan<br>
+								Tanza Cavite, TC<br>
+								Phone : 123-456-7890
+							</p>
+						</div>
+						<div class="col-md-4 col-lg-3">
+							<h4 class="mb-4">Opening Hours</h4>
+							<div class="info custom-info">
+								<span>Mon-Fri</span>
+								<span>8:30 am to 5:00 pm</span>
+							</div>
+							<div class="info custom-info">
+								<span>Saturday</span>
+								<span>9:30 am to 1:00 pm</span>
+							</div>
+							<div class="info custom-info">
+								<span>Sunday</span>
+								<span>Closed</span>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-3">
+							<div class="contact-details">
+								<h4 class="mb-4">Emergency Cases</h4>
+								<a class="text-decoration-none" href="tel:1234567890">
+									<strong class="font-weight-light">(800)123-4567</strong>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-2 text-md-center text-lg-start ms-lg-auto">
+							<h4 class="mb-4">Social Media</h4>
+							<ul class="social-icons">
+								<li class="social-icons-facebook">
+									<a href="https://www.facebook.com/tanzadoctorshospital" target="_blank" title="Facebook">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li class="social-icons-x">
+									<a href="http://www.x.com/" target="_blank" title="X">
+										<i class="fab fa-x-twitter"></i>
+									</a>
+								</li>
+								<li class="social-icons-linkedin">
+									<a href="http://www.linkedin.com/" target="_blank" title="Linkedin">
+										<i class="fab fa-linkedin-in"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright pt-3 pb-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12 text-center m-0">
+								<p>© Copyright 2026. All Rights Reserved. MIS OJT 2026</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</footer>
 		</div>

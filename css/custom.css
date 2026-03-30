@@ -8,11 +8,11 @@
 
 /*  border effect  */
 .owl-item > div {
-    border: 1px solid #f4f4f4;
+    /*border: 1px solid #f4f4f4;*/
     margin: 5px;
-    background: #fff;
+    /*background: #fff;*/
     border-radius: 4px;
-    /*transition: all 0.3s ease;*/
+    transition: all 0.3s ease;
 }
 
 .owl-item > div:hover {
@@ -26,8 +26,8 @@
     align-items: center; 
     justify-content: center; 
     min-height: 180px; 
-    background: #fff;
-    border: 1px solid #f0f0f0;
+    /*background: #fff;*/
+    /*border: 1px solid #f0f0f0;*/
     margin: 10px;
     border-radius: 8px;
     padding: 20px; 
