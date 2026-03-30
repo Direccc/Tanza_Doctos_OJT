@@ -81,8 +81,8 @@
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-logo">
-										<a href="demo-medical.html">
-											<img alt="Tanza Doctors Hospital Inc." width='250' height='60'src="img/demos/medical/TDH-logo.png">
+										<a href="demo-medical.html"> 
+											<img alt="Tanza Doctors Hospital Inc." width='250' height='60'src="img\logos\TDH-LOGO.png">
 										</a>
 									</div>
 								</div>
@@ -218,15 +218,25 @@
 
 					<hr class="solid">
 
-					<div class="row pt-4 mb-4">
-						<div class="col-lg-6">
-							<div id="googlemaps" class="google-map m-0 mb-5"></div>
+					<div class="row">
+						<div class="col-lg-6 p-0">
+							<div id="googlemaps" class="google-map mt-0" style="height: 500px;">
+								<iframe 	
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3865.0541140562996!2d120.81474587594275!3d14.366280486092778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33962be82248fead%3A0x1fb278b3b8324875!2sTanza%20Doctors%20Hospital!5e0!3m2!1sen!2sph!4v1774588812181!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+									width="200%"
+									heigh="550"
+									style="border:0";
+									allowfullscreen=""
+									loading="lazy"
+									referrerpolicy="no-referrer-when-downgrade">
+								</iframe>	
+							</div>
 						</div>
 						<div class="col-lg-6">
 
 							<h4 class="font-weight-semibold mb-4">Send a Message to Us</h4>
 
-							<form class="contact-form" action="php/contact-form.php" method="POST">
+							<form class="contact-form-wrapper" action="php/contact-form.php" method="POST">
 								<div class="contact-form-success alert alert-success d-none mt-4">
 									<strong>Success!</strong> Your message has been sent to us.
 								</div>
@@ -357,6 +367,7 @@
 		<script src="js/theme.init.js"></script>
 
 	<!-- Google Maps -->
+		<!--  
 		<script>
 
 			/* 
@@ -375,13 +386,13 @@
 				);
 				const map = new Map(document.getElementById("googlemaps"), {
 					zoom: 14,
-					center: { lat: -37.817240, lng: 144.955820 },
+					center: { lat: 14.3663098953047, lng: 120.81731364270799 },
 					mapId: "YOUR_MAP_API_ID",
 				});
 				const markers = [
 					{
-						position: { lat: -37.817240, lng: 144.955820 },
-						title: "Office 1<br>Melbourne, 121 King St, Australia<br>Phone: 123-456-1234",
+						position: { lat: 14.3663098953047, lng: 120.81731364270799 },
+						    title: "Tanza Doctors Hospital Inc.<br>Antero Soriano Hwy, Tanza, Cavite<br>Phone: (insert hospital number)",
 					}
 				];
 
@@ -414,6 +425,6 @@
 			initMap();	
 
 		</script>
-
+-->
 	</body>
 </html>

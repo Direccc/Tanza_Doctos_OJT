@@ -1,0 +1,65 @@
+.custom-carousel-logo {
+    max-height: 70px;
+    width: auto !important; /* Forces images not to stretch to full width */
+    margin: 0 auto;
+    display: inline-block;
+    object-fit: contain;
+}
+
+/*  border effect  */
+.owl-item > div {
+    border: 1px solid #f4f4f4;
+    margin: 5px;
+    background: #fff;
+    border-radius: 4px;
+    /*transition: all 0.3s ease;*/
+}
+
+.owl-item > div:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+
+/* Container for each logo in the carousel (INSURANCE) */
+.owl-item > div {
+    display: flex !important;
+    align-items: center; 
+    justify-content: center; 
+    min-height: 180px; 
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    margin: 10px;
+    border-radius: 8px;
+    padding: 20px; 
+}
+
+/*  logo image style */
+.custom-carousel-logo {
+    max-height: 110px; 
+    width: auto !important;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect  */
+.owl-item > div:hover .custom-carousel-logo {
+    transform: scale(1.05);
+}
+
+/* Logo */
+.custom-carousel-logo[alt*="Life & Health"],
+.custom-carousel-logo[alt*="Dynamic Care"] {
+    max-height: 130px; 
+}
+
+/* Map */
+#googlemaps {
+    background-color: transparent !important; 
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 0 !important;
+}
+#googlemaps iframe {
+    width: 100% !important;
+    display: block;
+}

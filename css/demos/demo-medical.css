@@ -288,7 +288,7 @@
 }
 
 .team .owl-carousel.nav-bottom .owl-nav button.owl-prev {
-		color: #0092e3;
+		color: #006a58;
 }
 
 .team .owl-carousel.nav-bottom .owl-nav button.owl-prev::before {
@@ -299,7 +299,7 @@
 }
 
 .team .owl-carousel.nav-bottom .owl-nav button.owl-next {
-		color: #2d529f;
+		color: #006a58;
 }
 
 .team .owl-carousel.nav-bottom .owl-nav button.owl-next::before {
@@ -494,4 +494,52 @@
 
 .social-icons li a {
 		border-radius: 0;
+}
+
+#doctor-timetable .custom-info span:nth-child(1) {
+  color: #777 !important;
+}
+
+#doctor-timetable .custom-info span:nth-child(2) {
+  color: #777 !important;
+}
+
+.doctor-schedule {
+  width: 100%;
+  border-collapse: collapse;
+  color: #777;
+  font-size: 15px;
+  table-layout: fixed;
+  margin-bottom: 20px;
+}
+
+.doctor-schedule td {
+  padding: 8px 14px;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd; /* apply to every cell */
+}
+
+.doctor-schedule .day {
+  width: 150px;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+}
+
+.doctor-schedule .time {
+  width: 175px;
+  white-space: nowrap;
+}
+
+#doctor-timetable {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px); /* start slightly lower */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#doctor-timetable.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0); /* rise into place */
 }
