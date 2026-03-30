@@ -47,6 +47,26 @@
 		<link rel="stylesheet" href="css/custom.css">
 
 	</head>
+					<!-- Loading Screen - WellCare Style -->
+<div id="loadingScreen" class="loading-screen">
+    <div class="loading-container">
+        <div class="loading-logo">
+            <img src="img/logos/TDH-LOGO.png" alt="Tanza Doctors Hospital Inc." class="loading-logo-img">
+        </div>
+        <div class="loading-tagline">
+            <p>Your health, our priority</p>
+        </div>
+        <div class="loading-spinner-wrapper">
+            <div class="loading-dot-spinner">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+</div>>
+</div>
+
 	<body>
 
 		<div class="body">
@@ -69,6 +89,7 @@
 												<li class="nav-item nav-item-borders py-2 pe-1 d-none d-md-inline-flex">
 													<a href="mailto:mail@domain.com"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i> mail@domain.com</a>
 												</li>
+													<li class="dropdown-full-color dropdown-secondary">
 											</ul>
 										</nav>
 									</div>
@@ -718,6 +739,45 @@
 
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
+
+
+		<!--------------------------------Loading Screen------------------------------------------->
+		<script>
+    
+    (function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        
+        function finishLoading() {
+            
+            document.body.classList.add('loaded');
+            
+            
+            if (loadingScreen) {
+                loadingScreen.classList.add('hide');
+                setTimeout(function() {
+                    if (loadingScreen && loadingScreen.parentNode) {
+                        loadingScreen.style.display = 'none';
+                    }
+                }, 1000);
+            }
+        }
+        
+        
+        if (document.readyState === 'complete') {
+            finishLoading();
+        } else {
+            window.addEventListener('load', function() {
+                setTimeout(finishLoading, 1000);
+            });
+        }
+        
+        //  after 4 seconds maximum
+        setTimeout(finishLoading, 9000);
+    })();
+</script>
+        
+
+		
 
 	</body>
 </html>
