@@ -1,24 +1,32 @@
 .custom-carousel-logo {
-    max-height: 70px;
-    width: auto !important; /* Forces images not to stretch to full width */
+    max-height: 70px; /* Reduced for a cleaner look */
+    width: auto !important;
     margin: 0 auto;
-    display: inline-block;
+    display: block; /* Better for centering than inline-block */
     object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-/*  border effect  */
-.owl-item > div {
-    /*border: 1px solid #f4f4f4;*/
-    margin: 5px;
-    /*background: #fff;*/
-    border-radius: 4px;
+.logo-carousel .owl-item > div {
+    display: flex !important;
+    align-items: center; 
+    justify-content: center; 
+    min-height: 120px; /* Lowered from 180px to reduce wasted white space */
+    margin: 10px;
+    border-radius: 8px;
+    padding: 15px;
     transition: all 0.3s ease;
 }
 
-.owl-item > div:hover {
+.logo-carousel .owl-item > div:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
+
+
+.owl-carousel.nav-bottom.rounded-nav .owl-item > div:hover {
+    box-shadow: none !important;
+}
 
 /* Container for each logo in the carousel (INSURANCE) */
 .owl-item > div {
@@ -42,14 +50,15 @@
 }
 
 /* Hover effect  */
-.owl-item > div:hover .custom-carousel-logo {
+.logo-carousel .owl-item > div:hover .custom-carousel-logo {
     transform: scale(1.05);
 }
 
 /* Logo */
 .custom-carousel-logo[alt*="Life & Health"],
-.custom-carousel-logo[alt*="Dynamic Care"] {
-    max-height: 130px; 
+.custom-carousel-logo[alt*="Dynamic Care"],
+.custom-carousel-logo[alt*="Health Maintenance"] {
+    max-height: 90px; 
 }
 
 /* Map */
