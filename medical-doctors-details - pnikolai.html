@@ -1,0 +1,81 @@
+<hr class="solid">
+
+<div class="row mt-5 mb-5 pt-1">
+	<div class="col-lg-4">
+
+		<div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 3000}">
+			<div>
+				<span class="img-thumbnail d-block no-borders">
+					<img alt="" class="img-fluid" src="img/demos/medical/doctors/Trial_Doc_Female.png">
+				</span>
+			</div>
+			<div>
+				<span class="img-thumbnail d-block no-borders">
+					<img alt="" class="img-fluid" src="img/demos/medical/doctors/Trial_Doc_Female_Scrubs.png">
+				</span>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="col-lg-8">
+
+		<h3 class="font-weight-bold mt-2"> Dr. Pacumio Francis Nikolai</h3>
+
+		<h5 class="mt-2 mb-1">Doctor BIO</h5>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Suspendisse potenti. Proin quis eros odio, dapibus dictum mauris. Donec nisi libero, adipiscing id pretium eget, consectetur sit amet leo. Nam at eros quis mi egestas fringilla non nec purus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Suspendisse potenti. Proin quis eros odio, dapibus dictum mauris. Donec nisi libero, adipiscing id pretium eget, consectetur sit amet leo.</p>
+
+		<!--Start Trial TimeTable-->
+
+		<div class="col-md-4 col-lg-3">
+
+			<!-- Hidden timetable initially -->
+			<div id="doctor-timetable" style="display:none;">
+			<table class="doctor-schedule">
+				<tr><td class="day">Monday</td><td class="time">9:00 AM - 11:00 AM</td></tr>
+				<tr><td class="day">Tuesday</td><td class="time">N/A</td></tr>
+				<tr><td class="day">Wednesday</td><td class="time">N/A</td></tr>
+				<tr><td class="day">Thursday</td><td class="time">9:00 AM - 11:00 AM</td></tr>
+				<tr><td class="day">Friday</td><td class="time">N/A</td></tr>
+				<tr><td class="day">Saturday</td><td class="time">9:00 AM - 11:00 AM</td></tr>
+				<tr><td class="day">Sunday</td><td class="time">N/A</td></tr>
+			</table>
+			</div>
+				<!-- Button to toggle timetable -->
+				<a href="#" class="btn btn-primary btn-icon mb-3" onclick="toggleTimetable(event)">
+					<i class="icon-calendar icons"></i>Doctor Timetable
+				</a>
+		</div>
+
+		<!--End Trial TimeTable-->
+
+		<h5 class="mt-2 mb-3">Procedures</h5>
+
+		<ul class="list list-icons list-primary">
+			<li><i class="fas fa-check-circle"></i> Surgeries</li>
+			<li><i class="fas fa-check-circle"></i> Neck Pain</li>
+			<li><i class="fas fa-check-circle"></i> Cervical Myelopathy</li>
+		</ul>
+
+	</div>
+</div>
+
+<hr class="solid">
+
+<h4 class="font-weight-semibold mt-5 mb-1">More Doctors:</h4>
+
+<script>
+  function toggleTimetable(e) {
+    e.preventDefault();
+    const timetable = document.getElementById("doctor-timetable");
+
+    if (timetable.classList.contains("show")) {
+      timetable.classList.remove("show");
+      setTimeout(() => timetable.style.display = "none", 500); // wait for fade out
+    } else {
+      timetable.style.display = "block";
+      setTimeout(() => timetable.classList.add("show"), 10); // trigger animation
+    }
+  }
+</script>
