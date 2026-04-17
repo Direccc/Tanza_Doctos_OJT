@@ -43,20 +43,107 @@
 			</table>
 			</div>
 				<!-- Button to toggle timetable -->
-				<a href="#" class="btn btn-primary btn-icon mb-3" onclick="toggleTimetable(event)">
-					<i class="icon-calendar icons"></i>Doctor Timetable
+				<a href="#" class="btn btn-primary btn-icon mb-3 w-100" onclick="toggleTimetable(event)">
+					<i class="icon-calendar icons"></i> Doctor Timetable
 				</a>
 		</div>
 
 		<!--End Trial TimeTable-->
 
-		<h5 class="mt-2 mb-3">Procedures</h5>
+		<!-- Start Hidden HMO initially -->
+			<div id="doctor-HMO" style="display:none;">
+				<div class="row">
+					<div class="col-lg-4">
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> 1 COOP</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-tertiary">
+							<li><i class="fas fa-check"></i> AMAPHIL</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> Avega</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-tertiary">
+							<li><i class="fas fa-check"></i> Carewell Health Systems</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> Cocolife</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-tertiary">
+							<li><i class="fas fa-check"></i> DCC</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> EastWest Healthcare, Inc.</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-tertiary">
+							<li><i class="fas fa-check"></i> ETIQA</li>
+						</ul>
+					</div>
 
-		<ul class="list list-icons list-primary">
-			<li><i class="fas fa-check-circle"></i> Surgeries</li>
-			<li><i class="fas fa-check-circle"></i> Neck Pain</li>
-			<li><i class="fas fa-check-circle"></i> Cervical Myelopathy</li>
-		</ul>
+					<div class="col-lg-4">
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> GENERALI</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-tertiary">
+							<li><i class="fas fa-check"></i> HMI</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> IWC</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-tertiary">
+							<li><i class="fas fa-check"></i> Intellicare</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> Lacson & Lacson</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-tertiary">
+							<li><i class="fas fa-check"></i> INLIFE</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> Life & Health HMP, Inc.</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-tertiary">
+							<li><i class="fas fa-check"></i> Maxicare</li>
+						</ul>
+					</div>
+
+					<div class="col-lg-4">
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> Medasia</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-tertiary">
+							<li><i class="fas fa-check"></i> MediCard Philippines</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> PHILCARE</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-tertiary">
+							<li><i class="fas fa-check"></i> Sun Life Grepa Financial</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> VALUCARE</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-tertiary">
+							<li><i class="fas fa-check"></i> WellCare Health Maintenance</li>
+						</ul>
+						<ul class="list list-icons list-icons-style-3 list-primary">
+							<li><i class="fas fa-check"></i> Pacific Cross Health Care, Inc.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- End Hidden HMO initially -->
+				
+			<!-- Start Button to toggle HMO -->
+				<div class="col-md-4 col-lg-3">
+					<a href="#" class="btn btn-primary btn-icon mb-3 w-100" onclick="toggleHMO(event)">
+						<i class="fa-solid fa-shield-heart"></i> Accredited HMO's
+					</a>
+				</div>
+			<!-- End Button to toggle HMO -->
+
+		</div>
 
 	</div>
 </div>
@@ -66,16 +153,42 @@
 <h4 class="font-weight-semibold mt-5 mb-1">More Doctors:</h4>
 
 <script>
-  function toggleTimetable(e) {
-    e.preventDefault();
-    const timetable = document.getElementById("doctor-timetable");
+function toggleTimetable(e) {
+  e.preventDefault();
+  const timetable = document.getElementById("doctor-timetable");
 
-    if (timetable.classList.contains("show")) {
-      timetable.classList.remove("show");
-      setTimeout(() => timetable.style.display = "none", 500); // wait for fade out
-    } else {
-      timetable.style.display = "block";
-      setTimeout(() => timetable.classList.add("show"), 10); // trigger animation
-    }
+  if (timetable.classList.contains("show")) {
+    timetable.classList.remove("show");
+
+    // Hide only after transition finishes
+    timetable.addEventListener("transitionend", function handler() {
+      timetable.style.display = "none";
+      timetable.removeEventListener("transitionend", handler);
+    });
+  } else {
+    timetable.style.display = "block";
+    setTimeout(() => timetable.classList.add("show"), 10);
   }
+}
+
+
+function toggleHMO(e) {
+  e.preventDefault();
+  const hmo = document.getElementById("doctor-HMO");
+
+  if (hmo.classList.contains("show")) {
+    hmo.classList.remove("show");
+
+    // Wait for the CSS transition to finish before hiding
+    hmo.addEventListener("transitionend", function handler() {
+      hmo.style.display = "none";
+      hmo.removeEventListener("transitionend", handler);
+    });
+  } else {
+    hmo.style.display = "block";
+    setTimeout(() => hmo.classList.add("show"), 10); // trigger animation
+  }
+}
+
 </script>
+

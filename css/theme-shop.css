@@ -898,3 +898,18 @@ html.lightbox-beforeclose .quick-view {
 .product .product-thumb-info .countdown-offer-wrapper {
 	background: var(--primary);
 }
+
+#doctor-HMO {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(20px); /* start lower */
+  transition: opacity 1s ease, max-height 1s ease, transform 1s ease;
+}
+
+#doctor-HMO.show {
+  opacity: 1;
+  max-height: 1000px;
+  transform: translateY(0); /* slide up */
+}
+
