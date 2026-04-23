@@ -181,8 +181,8 @@
 								<div class="feature-box-info">
 									<h4 class="mb-2">Address</h4>
 									<p class="text-4">
-										123 Sahud Ulan SU<br>
-										Tanza Cavite, TC
+										A. Soriano Highway, <br>
+										Brgy. Sahud Ulan Tanza Cavite
 									</p>
 								</div>
 							</div>
@@ -195,8 +195,11 @@
 								<div class="feature-box-info">
 									<h4 class="mb-2">Phone</h4>
 									<p class="text-4">
-										123-456-7890 <br>
-										123-456-7891
+										<strong>TRUNKLINE:</strong> (046) 888 9580 ... 86<br>
+										<strong>OUT-PATIENT DEPT.:</strong> 0917 701 6393<br>
+										<strong>IM SEC:</strong> 0927 964 4871<br>
+										<strong>HMO DEPT.:</strong> 0917 705 4799<br>
+										<strong>OUT-PATIENT DEPT.:</strong> 0917 636 6077
 									</p>
 								</div>
 							</div>
@@ -209,8 +212,9 @@
 								<div class="feature-box-info">
 									<h4 class="mb-2">Email</h4>
 									<p class="text-4">
-										<a href="mailto:mail@example.com" class="text-decoration-none">mail@example.com</a><br>
-										<a href="mailto:mail2@example.com" class="text-decoration-none">mail2@example.com</a>
+										<a href="mailto:tdh.tanzadoctorshospital@yahoo.com" class="text-decoration-none">tanzadoctorshospital@yahoo.com</a><br>
+										<a href="mailto:outpatientdepartment561@gmail.com" class="text-decoration-none">outpatientdepartment561@gmail.com</a>
+										<a href="mailto:tdh.mis@tanzadoctors.com" class="text-decoration-none">tdh.mis@tanzadoctors.com</a><br>]
 									</p>
 								</div>
 							</div>
@@ -367,65 +371,6 @@
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
 
-	<!-- Google Maps -->
-		<!--  
-		<script>
-
-			/* 
-			Map Markers:
-			- Get an API Key: https://developers.google.com/maps/documentation/javascript/get-api-key
-			- Generate Map Id: https://console.cloud.google.com/google/maps-apis/studio/maps
-			- Use https://www.latlong.net/convert-address-to-lat-long.html to get Latitude and Longitude of a specific address
-			*/
-			(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-				({key: "YOUR_API_KEY", v: "weekly"});
-
-			async function initMap() {
-				const { Map, InfoWindow } = await google.maps.importLibrary("maps");
-				const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
-					"marker",
-				);
-				const map = new Map(document.getElementById("googlemaps"), {
-					zoom: 14,
-					center: { lat: 14.3663098953047, lng: 120.81731364270799 },
-					mapId: "YOUR_MAP_API_ID",
-				});
-				const markers = [
-					{
-						position: { lat: 14.3663098953047, lng: 120.81731364270799 },
-						    title: "Tanza Doctors Hospital Inc.<br>Antero Soriano Hwy, Tanza, Cavite<br>Phone: (insert hospital number)",
-					}
-				];
-
-				const infoWindow = new InfoWindow();
-
-				markers.forEach(({ position, title }, i) => {
-					const pin = new PinElement({
-						background: "#e36159",
-						borderColor: "#e36159",
-						glyphColor: "#FFF",
-					});
-					const marker = new AdvancedMarkerElement({
-						position,
-						map,
-						title: `${title}`,
-						content: pin.element,
-					});
-
-					marker.addListener("click", ({ domEvent, latLng }) => {
-						const { target } = domEvent;
-
-						infoWindow.close();
-						infoWindow.setContent(marker.title);
-						infoWindow.open(marker.map, marker);
-					});
-				});	
-
-			}
-
-			initMap();	
-
-		</script>
--->
+	
 	</body>
 </html>
