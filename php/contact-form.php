@@ -17,7 +17,7 @@ require 'php-mailer/src/Exception.php';
 $email = 'aaronbalolong49@gmail.com';
 
 // If the e-mail is not working, change the debug option to 2 | $debug = 2;
-$debug = 2;
+$debug = 0;
 
 // If contact form don't has the subject input change the value of subject here
 $subject = ( isset($_POST['subject']) ) ? $_POST['subject'] : 'Define subject in php/contact-form.php line 29';
@@ -51,18 +51,18 @@ try {
 	// Step 2 (Optional) - If you don't receive the email, try to configure the parameters below:
 
 	$mail->IsSMTP();                                         // Set mailer to use SMTP
-	$mail->Host = 'smtp.gmail.com';				       // Specify main and backup server
+	$mail->Host = 'tanzadoctors.com';				       // Specify main and backup server
 	$mail->SMTPAuth = true;                                  // Enable SMTP authentication
-	$mail->Username = 'aaronbalolong49@gmail.com';                    // SMTP username
-	$mail->Password = 'ybti jlth zezy rfox';                              // SMTP password
-	$mail->SMTPSecure = 'tls';                               // Enable encryption, 'ssl' also accepted
-	$mail->Port = 587;   								       // TCP port to connect to
+	$mail->Username = 'trialmis@tanzadoctors.com';                    // SMTP username
+	$mail->Password = 'pRR@G(g^NI+@dYy8';                              // SMTP password
+	$mail->SMTPSecure = 'ssl';                               // Enable encryption, 'ssl' also accepted
+	$mail->Port = 465;   								       // TCP port to connect to
 
 	$mail->AddAddress($email);	 						       // Add another recipient
 
 	// From - Name
 	$fromName = ( isset($_POST['name']) ) ? $_POST['name'] : 'Website User';
-	$mail->SetFrom('aaronbalolong49@gmail.com', $fromName);
+	$mail->SetFrom('trialmis@tanzadoctors.com', $fromName);
 
 	// Reply To
 	if( isset($_POST['email']) && !empty($_POST['email']) ) {

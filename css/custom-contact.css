@@ -1,0 +1,59 @@
+/* Custom styles using your Poppins font and theme variables */
+    .contact-feature-card {
+        padding: 35px;
+        border-radius: 10px;
+        background: #fff;
+        transition: all 0.3s ease;
+        border: 1px solid #e9e9e9;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border-color: #006a58; /* Matches Porto Medical Primary Blue */
+    }
+
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+        background: #f4f4f4;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        transition: 0.3s;
+    }
+
+    .contact-feature-card:hover .icon-wrapper {
+        background: #006a58;
+    }
+
+    .contact-feature-card:hover .icon-wrapper i {
+        color: #fff !important;
+    }
+
+    /* Matching your theme's text-4 and font weights */
+    .contact-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #999;
+        display: block;
+        letter-spacing: -0.5px;
+        margin-top: 10px;
+    }
+
+    .contact-value {
+        font-size: 1.05rem; /* Equivalent to text-4 */
+        font-weight: 500;
+        color: #444;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .contact-value:hover {
+        color: #006a58;
+        text-decoration: none;
+    }
