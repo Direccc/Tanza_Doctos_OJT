@@ -1,10 +1,4 @@
 <?php
-/*
-Name: 			Contact Form
-Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	12.1.0
-*/
-
 namespace PortoContactForm;
 
 session_cache_limiter('nocache');
@@ -20,7 +14,7 @@ require 'php-mailer/src/SMTP.php';
 require 'php-mailer/src/Exception.php';
 
 // Step 1 - Enter your email address below.
-$email = 'you@domain.com';
+$email = 'aaronbalolong49@gmail.com';
 
 // If the e-mail is not working, change the debug option to 2 | $debug = 2;
 $debug = 0;
@@ -56,23 +50,19 @@ try {
 
 	// Step 2 (Optional) - If you don't receive the email, try to configure the parameters below:
 
-	//$mail->IsSMTP();                                         // Set mailer to use SMTP
-	//$mail->Host = 'mail.yourserver.com';				       // Specify main and backup server
-	//$mail->SMTPAuth = true;                                  // Enable SMTP authentication
-	//$mail->Username = 'user@example.com';                    // SMTP username
-	//$mail->Password = 'secret';                              // SMTP password
-	//$mail->SMTPSecure = 'tls';                               // Enable encryption, 'ssl' also accepted
-	//$mail->Port = 587;   								       // TCP port to connect to
+	$mail->IsSMTP();                                         // Set mailer to use SMTP
+	$mail->Host = 'tanzadoctors.com';				       // Specify main and backup server
+	$mail->SMTPAuth = true;                                  // Enable SMTP authentication
+	$mail->Username = 'trialmis@tanzadoctors.com';                    // SMTP username
+	$mail->Password = 'pRR@G(g^NI+@dYy8';                              // SMTP password
+	$mail->SMTPSecure = 'ssl';                               // Enable encryption, 'ssl' also accepted
+	$mail->Port = 465;   								       // TCP port to connect to
 
 	$mail->AddAddress($email);	 						       // Add another recipient
 
-	//$mail->AddAddress('person2@domain.com', 'Person 2');     // Add a secondary recipient
-	//$mail->AddCC('person3@domain.com', 'Person 3');          // Add a "Cc" address. 
-	//$mail->AddBCC('person4@domain.com', 'Person 4');         // Add a "Bcc" address. 
-
 	// From - Name
 	$fromName = ( isset($_POST['name']) ) ? $_POST['name'] : 'Website User';
-	$mail->SetFrom($email, $fromName);
+	$mail->SetFrom('trialmis@tanzadoctors.com', $fromName);
 
 	// Reply To
 	if( isset($_POST['email']) && !empty($_POST['email']) ) {

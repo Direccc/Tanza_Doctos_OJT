@@ -38,13 +38,15 @@
 		<link rel="stylesheet" href="css/theme-shop.css">
 
 		<!-- Demo CSS -->
-		<link rel="stylesheet" href="css/demos/medical.css">
+		<link rel="stylesheet" href="css/demos/demo-medical.css">
 
 		<!-- Skin CSS -->
 		<link id="skinCSS" rel="stylesheet" href="css/skins/skin-medical.css">
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/custom-contact.css">
+
 
 	</head>
 	<body>
@@ -172,47 +174,61 @@
 
 				<div class="container">
 
-					<div class="row mt-5">
-						<div class="col-lg-4">
-							<div class="feature-box feature-box-style-2">
-								<div class="feature-box-icon pt-0">
-									<i class="icon-location-pin icons"></i>
+					<div class="row mt-5 mb-5">
+						<div class="col-lg-4 mb-4">
+							<div class="contact-feature-card h-100 shadow-sm">
+								<div class="icon-wrapper">
+									<i class="icon-location-pin icons text-color-primary" style="font-size: 1.7rem;"></i>
 								</div>
-								<div class="feature-box-info">
-									<h4 class="mb-2">Address</h4>
-									<p class="text-4">
-										123 Sahud Ulan SU<br>
-										Tanza Cavite, TC
-									</p>
+								<h4 class="font-weight-bold text-color-dark mt-2 mb-3">Our Location</h4>
+								<p class="text-4 mb-0" style="line-height: 1.6;">
+									A. Soriano Highway, <br>
+									<strong class="text-color-dark">Brgy. Sahud Ulan</strong><br>
+									Tanza, Cavite
+								</p>
+							</div>
+						</div>
+
+						<div class="col-lg-4 mb-4">
+							<div class="contact-feature-card h-100 shadow-sm">
+								<div class="icon-wrapper">
+									<i class="icon-phone icons text-color-primary" style="font-size: 1.7rem;"></i>
+								</div>
+								<h4 class="font-weight-bold text-color-dark mt-2 mb-3">Phone Numbers</h4>
+								<div class="mb-2">
+									<span class="contact-label">Trunkline</span>
+									<a href="tel:0468889580" class="contact-value">(046) 888 9580</a>
+								</div>
+								<div class="row">
+									<div class="col-6">
+										<span class="contact-label">OPD</span>
+										<a href="tel:09177016393" class="contact-value text-3">0917 701 6393</a>
+									</div>
+									<div class="col-6">
+										<span class="contact-label">HMO</span>
+										<a href="tel:09177054799" class="contact-value text-3">0917 705 4799</a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-6">
+										<span class="contact-label">CARDIO</span>
+										<a href="tel:09177016393" class="contact-value text-3">0917 636 6077</a>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4">
-							<div class="feature-box feature-box-style-2">
-								<div class="feature-box-icon pt-0">
-									<i class="icon-phone icons"></i>
+
+						<div class="col-lg-4 mb-4">
+							<div class="contact-feature-card h-100 shadow-sm">
+								<div class="icon-wrapper">
+									<i class="icon-envelope icons text-color-primary" style="font-size: 1.7rem;"></i>
 								</div>
-								<div class="feature-box-info">
-									<h4 class="mb-2">Phone</h4>
-									<p class="text-4">
-										123-456-7890 <br>
-										123-456-7891
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="feature-box feature-box-style-2">
-								<div class="feature-box-icon pt-0">
-									<i class="icon-envelope icons"></i>
-								</div>
-								<div class="feature-box-info">
-									<h4 class="mb-2">Email</h4>
-									<p class="text-4">
-										<a href="mailto:mail@example.com" class="text-decoration-none">mail@example.com</a><br>
-										<a href="mailto:mail2@example.com" class="text-decoration-none">mail2@example.com</a>
-									</p>
-								</div>
+								<h4 class="font-weight-bold text-color-dark mt-2 mb-3">Email Support</h4>
+								<span class="contact-label">General Inquiry</span>
+								<a href="mailto:tdh.tanzadoctorshospital@yahoo.com" class="contact-value text-3">tanzadoctorshospital@yahoo.com</a>
+								
+								<span class="contact-label">MIS Department</span>
+								<a href="mailto:tdh.mis@tanzadoctors.com" class="contact-value text-3">tdh.mis@tanzadoctors.com</a>
 							</div>
 						</div>
 					</div>
@@ -237,7 +253,7 @@
 
 							<h4 class="font-weight-semibold mb-4">Send a Message to Us</h4>
 
-							<form class="contact-form-wrapper" action="php/contact-form.php" method="POST">
+							<form id="contactForm" class="contact-form" action="php/contact-form.php" method="POST">
 								<div class="contact-form-success alert alert-success d-none mt-4">
 									<strong>Success!</strong> Your message has been sent to us.
 								</div>
@@ -355,6 +371,8 @@
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
 
+		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
+
 		<!-- Current Page Vendor and Views -->
 		<script src="js/views/view.contact.js"></script>
 
@@ -367,65 +385,6 @@
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
 
-	<!-- Google Maps -->
-		<!--  
-		<script>
-
-			/* 
-			Map Markers:
-			- Get an API Key: https://developers.google.com/maps/documentation/javascript/get-api-key
-			- Generate Map Id: https://console.cloud.google.com/google/maps-apis/studio/maps
-			- Use https://www.latlong.net/convert-address-to-lat-long.html to get Latitude and Longitude of a specific address
-			*/
-			(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-				({key: "YOUR_API_KEY", v: "weekly"});
-
-			async function initMap() {
-				const { Map, InfoWindow } = await google.maps.importLibrary("maps");
-				const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
-					"marker",
-				);
-				const map = new Map(document.getElementById("googlemaps"), {
-					zoom: 14,
-					center: { lat: 14.3663098953047, lng: 120.81731364270799 },
-					mapId: "YOUR_MAP_API_ID",
-				});
-				const markers = [
-					{
-						position: { lat: 14.3663098953047, lng: 120.81731364270799 },
-						    title: "Tanza Doctors Hospital Inc.<br>Antero Soriano Hwy, Tanza, Cavite<br>Phone: (insert hospital number)",
-					}
-				];
-
-				const infoWindow = new InfoWindow();
-
-				markers.forEach(({ position, title }, i) => {
-					const pin = new PinElement({
-						background: "#e36159",
-						borderColor: "#e36159",
-						glyphColor: "#FFF",
-					});
-					const marker = new AdvancedMarkerElement({
-						position,
-						map,
-						title: `${title}`,
-						content: pin.element,
-					});
-
-					marker.addListener("click", ({ domEvent, latLng }) => {
-						const { target } = domEvent;
-
-						infoWindow.close();
-						infoWindow.setContent(marker.title);
-						infoWindow.open(marker.map, marker);
-					});
-				});	
-
-			}
-
-			initMap();	
-
-		</script>
--->
+	
 	</body>
 </html>
