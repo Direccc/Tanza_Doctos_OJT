@@ -27,16 +27,22 @@
 		<link rel="stylesheet" href="css/custom.css">
 
 		<style>
-			.insurance-grid-item img {
-				height: 100px;
-				width: auto;
-				object-fit: contain;
-				margin-bottom: 15px;
-				transition: transform 0.3s ease;
-			}
-			.insurance-grid-item img:hover {
-				transform: scale(1.05);
-			}
+			.insurance-grid-item { cursor: pointer; }
+        .insurance-grid-item img {
+            height: 100px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        .insurance-grid-item img:hover { transform: scale(1.05); }
+        .doctor-list-item {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .doctor-list-item:last-child { border-bottom: none; }
 		</style>
 	</head>
 	<body>
@@ -168,8 +174,8 @@
 							<i class="fas fa-search"></i>
 						</span>
 						<input type="text" id="pageSearch" 
-								class="form-control border-0 py-2 px-3" 
-								placeholder="Search all 23 providers..." 
+								class="form-control border-0 py-3 px-6" 
+								placeholder="Search all 23 providers or click the HMO to see the accredited Doctors" 
 								autocomplete="off" aria-label="Search providers">
 						</div>
 						<div id="searchResults" 
@@ -182,41 +188,61 @@
 
 
 							<div class="content-grid mt-5 pb-5">
-								<div class="row content-grid-row ps-3 pe-3">
-									<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="1Coop Health">
-										<a href="https://dev.chmf.coop/">
-										<img src="img/demos/medical/logos/1coop.png" alt="1Coop Health" class="img-fluid" />
-										</a>
-									</div>
-									<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="Avega">
-										<a href="https://site.avega.com.ph/">
-										<img src="img/demos/medical/logos/avega.png" alt="Avega" class="img-fluid" />
-										</a>
-									</div>
-									<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="Carewell">
-										<a href="https://carewellhealthsystems.com/">
-										<img src="img/demos/medical/logos/carewell.png" alt="Carewell" class="img-fluid" />
-										</a>
-									</div>
+						<div class="row content-grid-row ps-3 pe-3">
+                        <div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="1Coop Health" data-bs-toggle="modal" data-bs-target="#hmoModal">
+                            <img src="img/demos/medical/logos/1coop.png" alt="1Coop Health" class="img-fluid" />
+                        </div>
+							<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="Avega" data-bs-toggle="modal" data-bs-target="#hmoModal">
+								<img src="img/demos/medical/logos/avega.png" alt="Avega" class="img-fluid" />
+							</div>
+							<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="Carewell" data-bs-toggle="modal" data-bs-target="#hmoModal">
+								<img src="img/demos/medical/logos/carewell.png" alt="Carewell" class="img-fluid" />
+							</div>
+						</div>
+						<div class="row content-grid-row ps-3 pe-3 mt-4">
+							<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="Cocolife" data-bs-toggle="modal" data-bs-target="#hmoModal">
+								<img src="img/demos/medical/logos/cocolife.jpg" alt="Cocolife" class="img-fluid" />
+							</div>
+							<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="Dynamic Care" data-bs-toggle="modal" data-bs-target="#hmoModal">
+								<img src="img/demos/medical/logos/dynamic-care.png" alt="Dynamic Care" class="img-fluid" />
+							</div>
+							<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="EastWest Healthcare" data-bs-toggle="modal" data-bs-target="#hmoModal">
+								<img src="img/demos/medical/logos/EastWest.png" alt="EastWest Healthcare" class="img-fluid" />
+							</div>
+						</div>
+					</div>
+
+				<!-- HMO Modal -->
+				<div class="modal fade" id="hmoModal" tabindex="-1" aria-labelledby="hmoModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-md">
+						<div class="modal-content border-0 shadow-lg">
+							<div class="modal-header bg-primary text-white">
+								<div class="d-flex align-items-center">
+									<i class="fas fa-hospital-alt me-2"></i>
+									<h5 class="modal-title mb-0" id="hmoModalLabel">HMO Name</h5>
 								</div>
-								<div class="row content-grid-row ps-3 pe-3">
-									<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="Cocolife">
-										<a href="https://www.cocolife.com/">
-										<img src="img/demos/medical/logos/cocolife.jpg" alt="Cocolife" class="img-fluid" />
-										</a>
-									</div>
-									<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="Dynamic Care">
-										<a href="https://dynamiccare.com.ph/">
-										<img src="img/demos/medical/logos/dynamic-care.png" alt="Dynamic Care" class="img-fluid" />
-										</a>
-									</div>
-									<div class="content-grid-item col-sm-4 text-center insurance-grid-item" data-name="EastWest Healthcare">
-										<a href="https://eastwesthealthcare.com.ph/">
-										<img src="img/demos/medical/logos/EastWest.png" alt="EastWest Healthcare" class="img-fluid" />
-										</a>
-									</div>
+								<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body px-4 py-3">
+								<h6 class="text-muted text-uppercase fw-bold mb-3" style="font-size:0.75rem; letter-spacing:0.08em;">
+									<i class="fas fa-user-md me-1 text-primary"></i> Accredited Doctors
+								</h6>
+								<div id="doctorList" class="mb-2">
+									<!-- Populated dynamically -->
+								</div>
+								<div id="noDoctorsMsg" class="text-center text-muted py-3" style="display:none;">
+									<i class="fas fa-info-circle me-1"></i> No accredited doctors listed yet.
 								</div>
 							</div>
+							<div class="modal-footer justify-content-between border-top pt-3">
+								<small class="text-muted">Click the link to learn more</small>
+								<a id="hmoWebsiteLink" href="#" target="_blank" class="btn btn-primary btn-sm rounded-pill px-4">
+									Visit Website <i class="fas fa-external-link-alt ms-1"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 
 							<nav aria-label="Page navigation" class="mt-4 mb-4">
 								<ul class="pagination justify-content-center">
@@ -310,7 +336,35 @@
 		<script src="js/theme.js"></script>
 
 		<script>
-    //  all providers and their respective pages
+				//......................Doctors AND Websites..................//
+        const hmoData = {
+            "1Coop Health": {
+                doctors: ["Dr. Maria Santos", "Dr. Jose Rizal", "Dr. Angela Cruz", "Dr. Angela Cruz", "Dr. Angela Cruz", "Dr. Angela Cruz","Dr. Angela Cruz", "Dr. Angela Cruz", "Dr. Angela Cruz"],
+                url: "https://dev.chmf.coop/"
+            },
+            "Avega": {
+                doctors: ["Dr. Ana Reyes", "Dr. Luis Gomez", "Dr. Patricia Lim"],
+                url: "https://site.avega.com.ph/"
+            },
+            "Carewell": {
+                doctors: ["Dr. Pedro Penduko", "Dr. Carmen Dela Torre"],
+                url: "https://carewellhealthsystems.com/"
+            },
+            "Cocolife": {
+                doctors: ["Dr. Juan Dela Cruz", "Dr. Maricel Santos", "Dr. Rodel Manalo"],
+                url: "https://www.cocolife.com/"
+            },
+            "Dynamic Care": {
+                doctors: ["Dr. Roberto Silva", "Dr. Liza Fernandez"],
+                url: "https://dynamiccare.com.ph/"
+            },
+            "EastWest Healthcare": {
+                doctors: ["Dr. Clara Bella", "Dr. Marco Villanueva", "Dr. Grace Tan"],
+                url: "https://eastwesthealthcare.com.ph/"
+            }
+        };
+
+	//..................  all providers and their pages.................//
     const allInsurances = [
         { name: "1Coop Health", url: "medical-insurance.html" },
         { name: "Avega", url: "medical-insurance.html" },
@@ -376,6 +430,44 @@
             resultsDiv.style.display = 'none';
         }
     });
+
+
+	//.................................. Modal................ //
+	const hmoModal = document.getElementById('hmoModal');
+        hmoModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const hmoName = button.getAttribute('data-name');
+            const data = hmoData[hmoName];
+
+            // Update Title
+            document.getElementById('hmoModalLabel').textContent = hmoName;
+
+            // Update Doctor List
+            const listContainer = document.getElementById('doctorList');
+            const noDoctorsMsg = document.getElementById('noDoctorsMsg');
+            listContainer.innerHTML = '';
+
+            if (data && data.doctors && data.doctors.length > 0) {
+                noDoctorsMsg.style.display = 'none';
+                data.doctors.forEach(doc => {
+                    const div = document.createElement('div');
+                    div.className = 'doctor-list-item';
+                    div.innerHTML = `<i class="fas fa-user-md text-primary me-3"></i><span>${doc}</span>`;
+                    listContainer.appendChild(div);
+                });
+            } else {
+                noDoctorsMsg.style.display = 'block';
+            }
+
+            // Update Website Link
+            const webLink = document.getElementById('hmoWebsiteLink');
+            if (data && data.url) {
+                webLink.href = data.url;
+                webLink.style.display = 'inline-block';
+            } else {
+                webLink.style.display = 'none';
+            }
+        });
 </script>
 	</body>
 </html>
